@@ -1,0 +1,180 @@
+/* Sidebar Container */
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    /* Sidebar genişliği */
+    background: rgb(24, 23, 23) ;
+    /* Sidebar ve üst kısım için aynı arka plan */
+    color: white;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 1000;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-container.open {
+    transform: translateX(0);
+}
+
+/* Sidebar Content */
+.sidebar-content {
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #fefeff;
+    text-transform: uppercase;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Button Tasarımı */
+.tag {
+    padding: 4px 6px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    outline: none;
+    text-align: center;
+    user-select: none;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.tag.selected {
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Daha koyu ve belirgin bir gölge */
+    filter: brightness(0.7);
+    /* Parlaklığı daha fazla azalt */
+    transform: scale(0.95);
+    /* Hafif bir küçülme efekti */
+    transition: all 0.2s ease-in-out;
+    /* Geçişin yumuşak olması için */
+}
+
+/* Node Labels */
+.tag.node-label {
+    background-color: #baaefa;
+    color: #2c3e50;
+}
+
+.tag.node-label:hover {
+    background-color: #f2ffa6;
+}
+
+/* Relationship Types */
+.tag.relationship-type {
+    background-color: #d5f5cd;
+    color: #2c3e50;
+}
+
+.tag.relationship-type:hover {
+    background-color: #bbeab0;
+}
+
+/* Property Keys */
+.tag.property-key {
+    background-color: #e48f57;
+    color: #2c3e50;
+}
+
+.tag.property-key:hover {
+    background-color: #1a73c2;
+}
+
+/* Sidebar Toggle Button */
+.toggle-button {
+    position: fixed;
+    top: 20px;
+    background-color: #ffffff;
+    border: none;
+    color: #6a11cb;
+    font-size: 16px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    z-index: 1100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Sidebar Kapalı Durumda */
+.sidebar-container+.toggle-button {
+    left: 10px;
+    /* Sidebar kapalıyken sola sabitlenir */
+}
+
+/* Sidebar Açıkken */
+.sidebar-container.open+.toggle-button {
+    right: 310px;
+    /* Sidebar açıkken sağa kayar */
+}
+
+.toggle-button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Seçilen Etiketlerin Gösterimi */
+.selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    background: linear-gradient(135deg, #8e9eab, #eef2f3);
+    /* Sidebar arka planıyla aynı */
+}
+
+.selected-tag {
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    cursor: default;
+}
+
+.selected-tag.node-label {
+    background-color: #ffd5cd;
+}
+
+.selected-tag.relationship-type {
+    background-color: #d5f5cd;
+}
+
+.selected-tag.property-key {
+    background-color: #cde7ff;
+}
+
+.remove-tag {
+    margin-left: 8px;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+}
+
+.remove-tag:hover {
+    color: #ff0000;
+}
