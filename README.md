@@ -17,6 +17,9 @@ This project provides an interactive visualization of entity-relation data fetch
 - 📌 **Sidebar Controls** for fine-grained selection
 - ♻️ **Re-rendering support** using state-managed key updates
 
+![2](https://github.com/user-attachments/assets/8d770643-e6ed-4057-9a1f-cc2c4b230661)
+![1](https://github.com/user-attachments/assets/66c5239d-3935-46e9-858e-011a5771af9e)
+
 ---
 
 ## 🛠️ Built With
@@ -31,7 +34,7 @@ This project provides an interactive visualization of entity-relation data fetch
 ## 📡 Expected API Format
 
 The application expects the following JSON structure from the API:
-
+```
 {
   "data": {
     "nodes": [
@@ -58,7 +61,7 @@ The application expects the following JSON structure from the API:
     ]
   }
 }
-
+```
 🧩 Customization
 
 You can modify:
