@@ -27,8 +27,7 @@ This project provides an interactive visualization of entity-relation data fetch
 - [React](https://reactjs.org/)
 - [Neo4j Arc](https://www.npmjs.com/package/@neo4j-devtools/arc)
 - [Axios](https://axios-http.com/)
-- [TypeScript or JavaScript](https://www.typescriptlang.org/) *(depending on your implementation)*
-
+- [TypeScript](https://www.typescriptlang.org/) 
 ---
 
 ## 📡 Expected API Format
