@@ -59,14 +59,14 @@ drawerHeaderFontFamily: 'Arial, sans-serif',
 };
 
 const GraphComponent: React.FC = () => {
-  const [originalNodes, setOriginalNodes] = useState<BasicNode[]>([]); // API'den gelen düğümler
-  const [originalRelationships, setOriginalRelationships] = useState<BasicRelationship[]>([]); // API'den gelen ilişkiler
+  const [originalNodes, setOriginalNodes] = useState<BasicNode[]>([]); 
+  const [originalRelationships, setOriginalRelationships] = useState<BasicRelationship[]>([]);
     const [tempNodes, setTempNodes] = useState<BasicNode[]>([]);
   const [tempRelationships, setTempRelationships] = useState<BasicRelationship[]>([]); 
-  let [graph, setGraph] = useState<GraphModel | null>(null); // Görselleştirilecek grafik modeli
-  const [nodeLabels, setNodeLabels] = useState<string[]>([]); // Etiketler
-  const [relationshipTypes, setRelationshipTypes] = useState<string[]>([]); // İlişki türleri
-  const [propertyKeys, setPropertyKeys] = useState<string[]>([]); // Özellik anahtarları
+  let [graph, setGraph] = useState<GraphModel | null>(null);
+  const [nodeLabels, setNodeLabels] = useState<string[]>([]); 
+  const [relationshipTypes, setRelationshipTypes] = useState<string[]>([]); 
+  const [propertyKeys, setPropertyKeys] = useState<string[]>([]); 
   const [currentSelections, setCurrentSelections] = useState<{
     "Node Labels": string[];
     "Relationship Types": string[];
@@ -94,7 +94,6 @@ const GraphComponent: React.FC = () => {
   const token = params.get("token");
 
 
-  // API'den veri çekme
   useEffect(() => {
     const fetchGraphData = async () => {
       try {
@@ -127,8 +126,8 @@ const GraphComponent: React.FC = () => {
           propertyTypes: rel.propertyTypes || {},
         }));
 
-        setOriginalNodes(mappedNodes); // API'den gelen düğümleri kaydet
-        setOriginalRelationships(mappedRelationships); // API'den gelen ilişkileri kaydet
+        setOriginalNodes(mappedNodes); 
+        setOriginalRelationships(mappedRelationships);
         setTempNodes(mappedNodes);
         setTempRelationships(mappedRelationships);
 
@@ -138,7 +137,6 @@ const GraphComponent: React.FC = () => {
           ...new Set(apiNodes.flatMap((node: any) => Object.keys(node.properties || {}))),
         ] as string[]);
 
-        // Başlangıç grafiğini oluştur
         const initialGraph = new GraphModel();
         initialGraph.addNodes(mappedNodes as any);
         initialGraph.addRelationships(mappedRelationships as any);
