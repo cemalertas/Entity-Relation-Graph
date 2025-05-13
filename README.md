@@ -62,12 +62,3 @@ The application expects the following JSON structure from the API:
   }
 }
 ```
-🧩 Customization
-
-You can modify:
-
-    🎨 darkTheme in GraphComponent.tsx to change UI colors
-
-    ⚙️ Graph logic in GraphModel to support custom node/relationship behaviors
-
-    📋 Sidebar selections to support additional filters like properties or value thresholds
